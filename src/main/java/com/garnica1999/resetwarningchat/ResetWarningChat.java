@@ -15,10 +15,9 @@ import org.bukkit.plugin.java.JavaPlugin;
  * @author wcarl
  */
 public class ResetWarningChat extends JavaPlugin {
-
+    
     @Override
     public void onEnable() {
-        // Insertar aquí la lógica para llevar a cabo cuando el plugin está habilitado.
     }
 
     @Override
@@ -52,8 +51,11 @@ public class ResetWarningChat extends JavaPlugin {
                 sender.sendMessage("Número de argumentos inválido.");
                 return false;
             }
-            Bukkit.broadcastMessage("El servidor se reiniciará en ");
+            String min = (Integer.parseInt(args[0]) == 1) ? "minuto" : "minutos";
+            Bukkit.broadcastMessage("El servidor se reiniciará en " + args[0] + " " + min);
 
+            ReloadServer reloadServer = new ReloadServer(this);
+            reloadServer.applyReload(Long.parseLong(args[0]));
             return true;
         }
         return false;

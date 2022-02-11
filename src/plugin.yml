@@ -1,7 +1,7 @@
 ## YAML Template.
 ---
 name: ResetWarningChat
-main: com.garnica1999.resetwarningchat
+main: com.garnica1999.resetwarningchat.ResetWarningChat
 version: 1.0
 commands:
    rw:

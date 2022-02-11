@@ -1,0 +1,11 @@
+## YAML Template.
+---
+name: {$PluginName}
+main: {$PackageName}.{$MainClass}
+version: {$VersionNumber}
+commands:
+   rw:
+      description: Este es un comando de ejemplo.
+      usage: /<command> [message] [timereset]
+      permission: resetwarningchat.rw
+      permission-message: Usted no tiene <permiso>

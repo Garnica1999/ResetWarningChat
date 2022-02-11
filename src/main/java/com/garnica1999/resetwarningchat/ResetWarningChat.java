@@ -28,23 +28,27 @@ public class ResetWarningChat extends JavaPlugin {
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+        Player player = null;
         if (cmd.getName().equalsIgnoreCase("rw")) {
-
-            if (Bukkit.getServer().getPlayer(sender.getName()) == null) {
-                sender.sendMessage("Jugador no está en línea");
-                return false;
-            }
-
+            
             if (!(sender instanceof Player)) {
                 sender.sendMessage("Este comando puede ser utilizado solamente por un jugador");
                 return false;
+            } else{
+                player = (Player)sender;
             }
+            
+            if (Bukkit.getServer().getPlayer(player.getUniqueId()) == null) {
+                sender.sendMessage("Jugador no está en línea");
+                return false;
+            }
+            
             if (args.length == 0) {
                 sender.sendMessage("Comando inválido. Falta los minutos de reinicio.");
                 return false;
             }
 
-            if (args.length > 0) {
+            if (args.length < 1 || args.length > 1) {
                 sender.sendMessage("Número de argumentos inválido.");
                 return false;
             }

@@ -1,8 +1,8 @@
 ## YAML Template.
 ---
-name: {$PluginName}
-main: {$PackageName}.{$MainClass}
-version: {$VersionNumber}
+name: ResetWarningChat
+main: com.garnica1999.resetwarningchat
+version: 1.0
 commands:
    rw:
       description: Este es un comando de ejemplo.
